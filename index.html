@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarmizy - Portfolio</title>
+    <title>Tarmizi Hairudin - Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Tarmizy</a>
-            <div class="nav__menu">
+            <a href="#" class="nav__logo">Tarmizi.dev</a>
+            <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
             </div>
             <div class="nav__toggle" id="nav-toggle">
                 <i class="fas fa-bars"></i>
@@ -32,40 +38,55 @@
         <!-- Home -->
         <section class="home section" id="home">
             <div class="home__container container">
-                <div class="home__content">
-                    <h1 class="home__title">Hi, I'm Tarmizy</h1>
-                    <h3 class="home__subtitle">Software Developer</h3>
-                    <p class="home__description">Passionate about creating efficient and innovative solutions through code.</p>
-                    <a href="#contact" class="button">Contact Me</a>
+                <div class="home__content" data-aos="fade-right">
+                    <span class="home__greeting">Hello, I'm</span>
+                    <h1 class="home__title">Tarmizi Hairudin</h1>
+                    <h3 class="home__subtitle">Senior Software Engineer</h3>
+                    <p class="home__description">
+                        Experienced software engineer specializing in backend development and DevOps practices.
+                        Passionate about building scalable systems and automating development workflows.
+                    </p>
+                    <div class="home__buttons">
+                        <a href="#contact" class="button">Contact Me</a>
+                        <a href="#portfolio" class="button button--ghost">My Work</a>
+                    </div>
                 </div>
-                <div class="home__social">
-                    <a href="https://github.com/tarmizy" target="_blank" class="home__social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="home__social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/yourusername" target="_blank" class="home__social-link"><i class="fab fa-twitter"></i></a>
+                <div class="home__social" data-aos="fade-left">
+                    <a href="https://github.com/tarmizy" target="_blank" class="home__social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/tarmizi-hairudin-ambo-9b78b0151" target="_blank" class="home__social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="home__social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- About -->
         <section class="about section" id="about">
-            <h2 class="section__title">About Me</h2>
-            <div class="about__container container">
-                <div class="about__content">
-                    <p class="about__description">
-                        I am a software developer with expertise in building web applications and solving complex problems.
-                        With a strong foundation in various programming languages and frameworks, I strive to create
-                        efficient and scalable solutions that make a difference.
-                    </p>
+            <h2 class="section__title" data-aos="fade-down">About Me</h2>
+            <div class="about__container container grid">
+                <div class="about__content" data-aos="fade-right">
+                    <div class="about__description">
+                        <p>
+                            I am a Senior Software Engineer with extensive experience in backend development,
+                            DevOps practices, and system architecture. My expertise lies in building scalable
+                            applications and implementing efficient CI/CD pipelines.
+                        </p>
+                    </div>
                     <div class="about__info">
                         <div class="about__box">
                             <i class="fas fa-award about__icon"></i>
                             <h3 class="about__title">Experience</h3>
-                            <span class="about__subtitle">5+ Years</span>
+                            <span class="about__subtitle">7+ Years</span>
                         </div>
                         <div class="about__box">
                             <i class="fas fa-briefcase about__icon"></i>
                             <h3 class="about__title">Completed</h3>
-                            <span class="about__subtitle">20+ Projects</span>
+                            <span class="about__subtitle">50+ Projects</span>
                         </div>
                         <div class="about__box">
                             <i class="fas fa-headset about__icon"></i>
@@ -77,46 +98,90 @@
             </div>
         </section>
 
+        <!-- Experience -->
+        <section class="experience section" id="experience">
+            <h2 class="section__title" data-aos="fade-down">Experience</h2>
+            <div class="experience__container container" data-aos="fade-up">
+                <div class="timeline">
+                    <div class="timeline__item">
+                        <h3 class="timeline__title">Senior Software Engineer</h3>
+                        <p class="timeline__company">Current Company</p>
+                        <p class="timeline__description">
+                            • Leading backend development team and implementing DevOps practices<br>
+                            • Designing and maintaining microservices architecture<br>
+                            • Optimizing CI/CD pipelines and deployment processes
+                        </p>
+                    </div>
+                    <div class="timeline__item">
+                        <h3 class="timeline__title">DevOps Engineer</h3>
+                        <p class="timeline__company">Previous Company</p>
+                        <p class="timeline__description">
+                            • Implemented automated deployment pipelines<br>
+                            • Managed cloud infrastructure on AWS<br>
+                            • Improved system reliability and monitoring
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Skills -->
         <section class="skills section" id="skills">
-            <h2 class="section__title">Skills</h2>
-            <div class="skills__container container">
-                <div class="skills__content">
-                    <div class="skills__box">
-                        <h3 class="skills__title">Frontend Development</h3>
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class="fab fa-html5"></i>
-                                <span>HTML</span>
-                            </div>
-                            <div class="skills__data">
-                                <i class="fab fa-css3-alt"></i>
-                                <span>CSS</span>
-                            </div>
-                            <div class="skills__data">
-                                <i class="fab fa-js"></i>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="skills__data">
-                                <i class="fab fa-react"></i>
-                                <span>React</span>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="section__title" data-aos="fade-down">Skills</h2>
+            <div class="skills__container container grid">
+                <div class="skills__content" data-aos="fade-right">
                     <div class="skills__box">
                         <h3 class="skills__title">Backend Development</h3>
                         <div class="skills__group">
                             <div class="skills__data">
-                                <i class="fab fa-node-js"></i>
-                                <span>Node.js</span>
+                                <i class="fab fa-python"></i>
+                                <div class="skills__info">
+                                    <h3>Python</h3>
+                                    <span>Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="fab fa-java"></i>
+                                <div class="skills__info">
+                                    <h3>Java</h3>
+                                    <span>Intermediate</span>
+                                </div>
                             </div>
                             <div class="skills__data">
                                 <i class="fas fa-database"></i>
-                                <span>MySQL</span>
+                                <div class="skills__info">
+                                    <h3>SQL</h3>
+                                    <span>Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills__content" data-aos="fade-left">
+                    <div class="skills__box">
+                        <h3 class="skills__title">DevOps & Cloud</h3>
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class="fab fa-docker"></i>
+                                <div class="skills__info">
+                                    <h3>Docker</h3>
+                                    <span>Advanced</span>
+                                </div>
                             </div>
                             <div class="skills__data">
-                                <i class="fab fa-python"></i>
-                                <span>Python</span>
+                                <i class="fab fa-aws"></i>
+                                <div class="skills__info">
+                                    <h3>AWS</h3>
+                                    <span>Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="fab fa-jenkins"></i>
+                                <div class="skills__info">
+                                    <h3>Jenkins</h3>
+                                    <span>Advanced</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -126,30 +191,56 @@
 
         <!-- Portfolio -->
         <section class="portfolio section" id="portfolio">
-            <h2 class="section__title">Portfolio</h2>
-            <div class="portfolio__container container">
-                <!-- Portfolio items will be dynamically added here -->
+            <h2 class="section__title" data-aos="fade-down">Portfolio</h2>
+            <div class="portfolio__container container grid">
+                <div class="portfolio__item" data-aos="fade-up">
+                    <img src="assets/project1.jpg" alt="" class="portfolio__img">
+                    <div class="portfolio__data">
+                        <h3 class="portfolio__title">Microservices Architecture</h3>
+                        <p class="portfolio__description">Designed and implemented scalable microservices architecture using Docker and Kubernetes</p>
+                        <a href="#" class="button button--flex button--small portfolio__button">
+                            Demo <i class="fas fa-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="portfolio__item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/project2.jpg" alt="" class="portfolio__img">
+                    <div class="portfolio__data">
+                        <h3 class="portfolio__title">CI/CD Pipeline</h3>
+                        <p class="portfolio__description">Automated deployment pipeline using Jenkins, Docker, and AWS</p>
+                        <a href="#" class="button button--flex button--small portfolio__button">
+                            Demo <i class="fas fa-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Contact -->
         <section class="contact section" id="contact">
-            <h2 class="section__title">Contact Me</h2>
-            <div class="contact__container container">
-                <form action="#" class="contact__form">
-                    <div class="contact__inputs">
-                        <div class="contact__content">
-                            <input type="email" class="contact__input" placeholder="Email">
+            <h2 class="section__title" data-aos="fade-down">Contact Me</h2>
+            <div class="contact__container container grid" data-aos="fade-up">
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <i class="fas fa-envelope contact__card-icon"></i>
+                            <h3 class="contact__card-title">Email</h3>
+                            <span class="contact__card-data">your.email@example.com</span>
+                            <a href="mailto:your.email@example.com" class="contact__button">
+                                Write me <i class="fas fa-arrow-right contact__button-icon"></i>
+                            </a>
                         </div>
-                        <div class="contact__content">
-                            <input type="text" class="contact__input" placeholder="Subject">
-                        </div>
-                        <div class="contact__content">
-                            <textarea class="contact__input" placeholder="Message" cols="30" rows="7"></textarea>
+                        <div class="contact__card">
+                            <i class="fab fa-linkedin contact__card-icon"></i>
+                            <h3 class="contact__card-title">LinkedIn</h3>
+                            <span class="contact__card-data">Tarmizi Hairudin</span>
+                            <a href="https://linkedin.com/in/tarmizi-hairudin-ambo-9b78b0151" target="_blank" class="contact__button">
+                                Connect <i class="fas fa-arrow-right contact__button-icon"></i>
+                            </a>
                         </div>
                     </div>
-                    <button class="button">Send Message</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -158,19 +249,25 @@
     <footer class="footer">
         <div class="footer__container container">
             <div class="footer__content">
-                <h3 class="footer__title">Tarmizy</h3>
-                <p class="footer__description">Software Developer</p>
+                <h3 class="footer__title">Tarmizi Hairudin</h3>
+                <p class="footer__description">Senior Software Engineer</p>
             </div>
             <div class="footer__content">
                 <h3 class="footer__title">Social</h3>
                 <ul class="footer__social">
-                    <a href="https://github.com/tarmizy" target="_blank" class="footer__social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="footer__social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/yourusername" target="_blank" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/tarmizy" target="_blank" class="footer__social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/tarmizi-hairudin-ambo-9b78b0151" target="_blank" class="footer__social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="footer__social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </ul>
             </div>
         </div>
-        <p class="footer__copy">&#169; Tarmizy. All rights reserved</p>
+        <p class="footer__copy">&#169; 2025 Tarmizi Hairudin. All rights reserved</p>
     </footer>
 
     <!-- Scroll to top -->
@@ -178,7 +275,17 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <!-- Main JS -->
     <script src="js/main.js"></script>
+    
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
