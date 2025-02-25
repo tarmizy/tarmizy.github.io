@@ -16,22 +16,26 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">
-                <i class="fas fa-terminal"></i> Code In The Word
-            </a>
-            
-            <div class="nav__menu">
+            <a href="#" class="nav__logo">Tarmizi</a>
+
+            <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav__item"><a href="#home" class="nav__link"><i class="fas fa-home"></i> Home</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link"><i class="fas fa-user"></i> About</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link"><i class="fas fa-tools"></i> Skills</a></li>
                     <li class="nav__item"><a href="#experience" class="nav__link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li class="nav__item"><a href="#portfolio" class="nav__link"><i class="fas fa-code-branch"></i> Portfolio</a></li>
                     <li class="nav__item"><a href="#projects" class="nav__link"><i class="fas fa-project-diagram"></i> Projects</a></li>
                     <li class="nav__item"><a href="#certifications" class="nav__link"><i class="fas fa-certificate"></i> Certifications</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
+                <i class="fas fa-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
@@ -182,8 +186,8 @@
                             </div>
                             <div class="skills__item">
                                 <div class="skills__info">
-                                    <i class="fas fa-cube"></i>
-                                    <span>Kubernetes</span>
+                                    <i class="fas fa-dharmachakra"></i>
+                                    <h3>Kubernetes</h3>
                                 </div>
                                 <div class="skills__bar">
                                     <div class="skills__percentage" style="width: 90%">
@@ -321,60 +325,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="skills__card">
-                        <div class="skills__card-header">
-                            <i class="fas fa-chart-line skills__card-icon"></i>
-                            <h3 class="skills__card-title">Monitoring & Observability</h3>
-                        </div>
-                        <div class="skills__list">
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <span>Grafana</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" style="width: 90%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-search"></i>
-                                    <span>ELK Stack</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" style="width: 90%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span>Prometheus</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" style="width: 90%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-dog"></i>
-                                    <span>Datadog</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" style="width: 75%">
-                                        <span>Intermediate</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -535,7 +485,7 @@
                                     </li>
                                     <li>
                                         <i class="fas fa-check-circle"></i>
-                                        <span>Implemented CI/CD pipelines using Jenkins and GitLab for automated Kubernetes deployments</span>
+                                        <span>Designed and implemented CI/CD pipelines using Jenkins and GitLab for automated Kubernetes deployments</span>
                                     </li>
                                     <li>
                                         <i class="fas fa-check-circle"></i>
@@ -667,10 +617,162 @@
             </div>
         </section>
 
+        <!-- Portfolio -->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title" data-text="Portfolio">DevOps Portfolio</h2>
+            <span class="section__subtitle">Professional Work</span>
+
+            <div class="portfolio__container container">
+                <!-- Cloud Infrastructure Project -->
+                <div class="project__item">
+                    <div class="project__header">
+                        <h3 class="project__title">Cloud Infrastructure Automation</h3>
+                        <span class="project__date">2023</span>
+                    </div>
+                    <ul class="project__list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Designed and implemented infrastructure as code using Terraform for AWS resources</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Automated deployment processes reducing provisioning time by 70%</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Implemented multi-environment setup with proper security controls</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Established disaster recovery procedures with automated failover</span>
+                        </li>
+                    </ul>
+                    <div class="project__skills">
+                        <h4>Technologies Used:</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Terraform</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Ansible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CI/CD Pipeline Project -->
+                <div class="project__item">
+                    <div class="project__header">
+                        <h3 class="project__title">CI/CD Pipeline Implementation</h3>
+                        <span class="project__date">2023</span>
+                    </div>
+                    <ul class="project__list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Developed comprehensive CI/CD pipelines using Jenkins and GitLab</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Implemented automated testing and deployment workflows</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Reduced deployment time from hours to minutes</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Integrated security scanning and quality gates in the pipeline</span>
+                        </li>
+                    </ul>
+                    <div class="project__skills">
+                        <h4>Technologies Used:</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">GitLab CI</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">SonarQube</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kubernetes Platform Project -->
+                <div class="project__item">
+                    <div class="project__header">
+                        <h3 class="project__title">Kubernetes Platform Management</h3>
+                        <span class="project__date">2022</span>
+                    </div>
+                    <ul class="project__list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Managed and optimized Kubernetes clusters for high-availability applications</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Implemented service mesh with Istio for microservices architecture</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Set up monitoring and logging solutions using Prometheus and ELK Stack</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Achieved 99.99% uptime for critical services</span>
+                        </li>
+                    </ul>
+                    <div class="project__skills">
+                        <h4>Technologies Used:</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Istio</span>
+                            <span class="skill-tag">Prometheus</span>
+                            <span class="skill-tag">ELK Stack</span>
+                            <span class="skill-tag">Helm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Automation Project -->
+                <div class="project__item">
+                    <div class="project__header">
+                        <h3 class="project__title">Security Automation Platform</h3>
+                        <span class="project__date">2022</span>
+                    </div>
+                    <ul class="project__list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Implemented automated security scanning and compliance checks</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Developed custom security policies and enforcement rules</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Integrated security tools into CI/CD pipeline</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Achieved 95% reduction in security vulnerabilities</span>
+                        </li>
+                    </ul>
+                    <div class="project__skills">
+                        <h4>Technologies Used:</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HashiCorp Vault</span>
+                            <span class="skill-tag">OWASP ZAP</span>
+                            <span class="skill-tag">SonarQube</span>
+                            <span class="skill-tag">Trivy</span>
+                            <span class="skill-tag">OPA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Projects -->
         <section class="projects section" id="projects">
-            <h2 class="section__title" data-text="Projects">Projects</h2>
-            <span class="section__subtitle">Recent Work</span>
+            <h2 class="section__title" data-text="Projects">Personal Projects</h2>
+            <span class="section__subtitle">Featured Projects</span>
             <div class="projects__container container">
                 <!-- Hosting Project -->
                 <div class="project__item">
@@ -1005,6 +1107,58 @@
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
+        /*==================== MENU SHOW Y HIDDEN ====================*/
+        const navMenu = document.getElementById('nav-menu'),
+              navToggle = document.getElementById('nav-toggle'),
+              navClose = document.getElementById('nav-close')
+
+        /*===== MENU SHOW =====*/
+        /* Validate if constant exists */
+        if(navToggle){
+            navToggle.addEventListener('click', () =>{
+                navMenu.classList.add('show-menu')
+            })
+        }
+
+        /*===== MENU HIDDEN =====*/
+        /* Validate if constant exists */
+        if(navClose){
+            navClose.addEventListener('click', () =>{
+                navMenu.classList.remove('show-menu')
+            })
+        }
+
+        /*==================== REMOVE MENU MOBILE ====================*/
+        const navLink = document.querySelectorAll('.nav__link')
+
+        function linkAction(){
+            const navMenu = document.getElementById('nav-menu')
+            // When we click on each nav__link, we remove the show-menu class
+            navMenu.classList.remove('show-menu')
+        }
+        navLink.forEach(n => n.addEventListener('click', linkAction))
+
+        /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+        const sections = document.querySelectorAll('section[id]')
+
+        function scrollActive(){
+            const scrollY = window.pageYOffset
+
+            sections.forEach(current =>{
+                const sectionHeight = current.offsetHeight
+                const sectionTop = current.offsetTop - 50
+                const sectionId = current.getAttribute('id')
+
+                if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                    document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+                }else{
+                    document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+                }
+            })
+        }
+        window.addEventListener('scroll', scrollActive)
+    </script>
+    <script>
         function generateCV(e) {
             e.preventDefault();
             
@@ -1019,38 +1173,58 @@
                 // A4 size constants
                 const pageWidth = 210;  // A4 width in mm
                 const pageHeight = 297; // A4 height in mm
-                const margin = 20;      // Reduced margins
+                const margin = 20;      // Smaller margin
                 const contentWidth = pageWidth - (margin * 2);
                 let y = margin;
 
-                // Font sizes and styling
+                // Font sizes
                 const fonts = {
-                    header: 14,      // Slightly smaller header
-                    subheader: 11,   // Reduced subheader
-                    section: 12,     // Compact section headers
-                    normal: 10,      // Keep body text readable
-                    small: 9         // Contact details
+                    header: 18,
+                    subheader: 14,
+                    section: 12,
+                    normal: 10,
+                    small: 9
                 };
 
-                // Professional color scheme (keep the same colors)
-                const colors = {
-                    primary: [41, 128, 185],     // Professional blue
-                    secondary: [52, 73, 94],     // Dark slate
-                    text: [44, 62, 80],          // Clear readable text
-                    light: [189, 195, 199]       // Subtle accents
-                };
-
-                // Tighter spacing
+                // Spacing
                 const spacing = {
-                    after_header: 8,     // Reduced header spacing
-                    after_section: 6,    // Tighter section spacing
-                    between_items: 4,    // Compact item spacing
-                    line_height: 5,      // Tighter but still readable
-                    paragraph: 3         // Reduced paragraph spacing
+                    after_header: 8,
+                    after_section: 10,
+                    between_items: 6,
+                    line_height: 5
                 };
 
-                // Helper functions
-                function checkNewPage(y, minSpace = 35) { // Reduced minimum space
+                function addSection(title, y) {
+                    doc.setDrawColor(100, 100, 100);
+                    doc.setFillColor(240, 240, 240);
+                    doc.rect(margin, y - 4, contentWidth, 7, 'F');
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(fonts.section);
+                    doc.setTextColor(50, 50, 50);
+                    doc.text(title.toUpperCase(), margin + 2, y + 1);
+                    doc.setFont('helvetica', 'normal');
+                    doc.setTextColor(0, 0, 0);
+                    return y + spacing.after_section;
+                }
+
+                function addParagraph(text, y, indent = 0) {
+                    doc.setFontSize(fonts.normal);
+                    const maxWidth = contentWidth - indent;
+                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
+                    doc.text(lines, margin + indent, y);
+                    return y + (lines.length * spacing.line_height) + 3;
+                }
+
+                function addBulletPoint(text, y, indent = 0) {
+                    doc.setFontSize(fonts.normal);
+                    doc.text('•', margin + indent, y);
+                    const maxWidth = contentWidth - (indent + 6);
+                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
+                    doc.text(lines, margin + indent + 4, y);
+                    return y + (lines.length * spacing.line_height) + 2;
+                }
+
+                function checkNewPage(y, minSpace = 40) {
                     if (y > pageHeight - minSpace) {
                         doc.addPage();
                         return margin;
@@ -1058,262 +1232,138 @@
                     return y;
                 }
 
-                function addSection(title, y, content = '') {
-                    y = checkNewPage(y, 45);  // Reduced space check
-                    
-                    // Section divider
-                    doc.setDrawColor(...colors.light);
-                    doc.setLineWidth(0.5);
-                    doc.line(margin, y, pageWidth - margin, y);
-                    y += 2; // Reduced space after line
-
-                    // Section title
-                    doc.setFont('helvetica', 'bold');
-                    doc.setFontSize(fonts.section);
-                    doc.setTextColor(...colors.primary);
-                    doc.text(title.toUpperCase(), margin, y);
-                    
-                    return y + spacing.after_section;
-                }
-
-                function addParagraph(text, y, indent = 0) {
-                    y = checkNewPage(y, 30);
-                    doc.setFontSize(fonts.normal);
-                    const maxWidth = contentWidth - indent;
-                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
-                    doc.text(lines, margin + indent, y);
-                    return y + (lines.length * spacing.line_height) + spacing.paragraph;
-                }
-
-                function addBulletPoint(text, y, indent = 0) {
-                    y = checkNewPage(y, 30);
-                    doc.setFontSize(fonts.normal);
-                    const bullet = '•';
-                    doc.text(bullet, margin + indent, y);
-                    const maxWidth = contentWidth - (indent + 10);
-                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
-                    doc.text(lines, margin + indent + 6, y);
-                    return y + (lines.length * spacing.line_height) + 2;
-                }
-
-                // Header with tighter spacing
+                // Header
                 doc.setFont('helvetica', 'bold');
                 doc.setFontSize(fonts.header);
-                doc.setTextColor(...colors.primary);
                 const name = document.querySelector('.home__title')?.textContent || 'Tarmizi Hairudin Ambo';
-                doc.text(name, margin, y);
+                doc.text(name, margin, y + 8);
 
-                // Contact info - right aligned in header
-                const contacts = Array.from(document.querySelectorAll('.contact__card'));
-                doc.setFontSize(fonts.small);
-                doc.setTextColor(...colors.secondary);
-                let contactY = y;
-                contacts.forEach(contact => {
-                    const data = contact.querySelector('.contact__card-data')?.textContent?.trim() || '';
-                    const xPos = pageWidth - margin - doc.getTextWidth(data);
-                    doc.text(data, xPos, contactY);
-                    contactY += spacing.line_height;
-                });
-
-                // Role/Title
-                y += spacing.line_height + 1;
                 doc.setFontSize(fonts.subheader);
-                doc.setTextColor(...colors.secondary);
                 const role = document.querySelector('.home__subtitle')?.textContent || 'DevOps Engineer & Cloud Architect';
-                doc.text(role, margin, y);
+                doc.text(role, margin, y + 18);
 
-                // Divider line
-                y += spacing.line_height + 2;
-                doc.setDrawColor(...colors.light);
+                // Add horizontal line
+                doc.setDrawColor(0, 0, 0);
                 doc.setLineWidth(0.5);
-                doc.line(margin, y, pageWidth - margin, y);
+                doc.line(margin, y + 22, pageWidth - margin, y + 22);
 
-                // Profile Summary
-                y += spacing.line_height + 2;
                 doc.setFont('helvetica', 'normal');
                 doc.setFontSize(fonts.normal);
-                doc.setTextColor(...colors.text);
                 const description = document.querySelector('.home__description')?.textContent || '';
-                const summaryLines = doc.splitTextToSize(description, contentWidth);
-                doc.text(summaryLines, margin, y);
-                y += (summaryLines.length * spacing.line_height) + spacing.after_section;
+                y = addParagraph(description, y + 30);
 
-                // Technical Skills Section
-                y = addSection('Technical Skills', y);
+                // About Me
+                y = checkNewPage(y + 15);
+                y = addSection('About Me', y);
+                const aboutText = document.querySelector('.about__description')?.textContent || '';
+                y = addParagraph(aboutText, y + 4);
 
-                // Two-column skills layout
-                const columnWidth = (contentWidth - 5) / 2;
-                let leftColY = y + spacing.line_height;
-                let rightColY = y + spacing.line_height;
+                // Skills
+                y = checkNewPage(y + 15);
+                y = addSection('Key Skills', y);
+                const skills = Array.from(document.querySelectorAll('.skills__card-title')).map(skill => skill.textContent);
 
-                const skillCards = Array.from(document.querySelectorAll('.skills__card'));
-                
-                skillCards.forEach((card, index) => {
-                    const isRightColumn = index % 2 === 1;
-                    let currentY = isRightColumn ? rightColY : leftColY;
-                    const xPos = margin + (isRightColumn ? columnWidth + 5 : 0);
+                // Display skills in 3 columns
+                const columns = 3;
+                const skillsPerColumn = Math.ceil(skills.length / columns);
+                const columnWidth = contentWidth / columns;
 
-                    // Check for page break
-                    if (currentY > pageHeight - 40) {
-                        doc.addPage();
-                        leftColY = margin + spacing.line_height;
-                        rightColY = margin + spacing.line_height;
-                        currentY = isRightColumn ? rightColY : leftColY;
-                    }
+                y += 4;
+                skills.forEach((skill, index) => {
+                    const column = Math.floor(index / skillsPerColumn);
+                    const xPos = margin + (column * columnWidth);
+                    const yPos = y + ((index % skillsPerColumn) * spacing.between_items);
 
-                    const category = card.querySelector('.skills__card-title')?.textContent || '';
-                    const skills = Array.from(card.querySelectorAll('.skills__info span'))
-                        .map(skill => skill.textContent);
-
-                    // Category header
-                    doc.setFont('helvetica', 'bold');
-                    doc.setTextColor(...colors.primary);
-                    doc.text(category + ':', xPos, currentY);
-
-                    // Skills list
-                    doc.setFont('helvetica', 'normal');
-                    doc.setTextColor(...colors.text);
-                    const skillText = skills.join(' • ');
-                    const skillLines = doc.splitTextToSize(skillText, columnWidth - 4);
-                    doc.text(skillLines, xPos + 3, currentY + spacing.line_height);
-
-                    const itemHeight = (skillLines.length * spacing.line_height) + spacing.between_items + 1;
-                    if (isRightColumn) {
-                        rightColY += itemHeight;
-                    } else {
-                        leftColY += itemHeight;
-                    }
+                    doc.text('•', xPos, yPos);
+                    doc.text(skill, xPos + 4, yPos);
                 });
 
-                // Move to next section
-                y = Math.max(leftColY, rightColY) + spacing.between_items;
+                y += (skillsPerColumn * spacing.between_items) + spacing.after_section;
 
-                // Experience section
-                const experiences = Array.from(document.querySelectorAll('.experience__item'));
-                
-                // Estimate experience section height
-                const estimatedExpHeight = experiences.reduce((acc, exp) => {
-                    const points = Array.from(exp.querySelectorAll('.experience__list li span')).length;
-                    return acc + (points * spacing.line_height) + spacing.after_header + 15;
-                }, 0);
-
-                if (y + estimatedExpHeight > pageHeight - 60) {
-                    doc.addPage();
-                    y = margin;
-                }
-
+                // Experience
+                y = checkNewPage(y + 15);
                 y = addSection('Professional Experience', y);
+                const experiences = Array.from(document.querySelectorAll('.experience__item'));
 
                 experiences.forEach((exp, index) => {
-                    // Estimate height for this experience item
-                    const points = Array.from(exp.querySelectorAll('.experience__list li span'));
-                    const estimatedHeight = (points.length * spacing.line_height) + spacing.after_header + 15;
-
-                    // Check if experience item will fit on current page
-                    if (y + estimatedHeight > pageHeight - 40) {
-                        doc.addPage();
-                        y = margin + 10;
-                    }
-
+                    y = checkNewPage(y + 8);
                     const title = exp.querySelector('.experience__title')?.textContent?.trim() || '';
-                    const company = exp.querySelector('.experience__company')?.textContent?.trim() || '';
-                    const period = exp.querySelector('.experience__period')?.textContent?.trim() || '';
+                    const description = exp.querySelector('.experience__description')?.textContent?.trim() || '';
 
                     // Title
                     doc.setFont('helvetica', 'bold');
-                    doc.setTextColor(...colors.primary);
+                    doc.setFontSize(fonts.normal);
                     doc.text(title, margin, y);
-                    
-                    // Period (right-aligned)
-                    doc.setFont('helvetica', 'normal');
-                    doc.setTextColor(...colors.secondary);
-                    const periodWidth = doc.getTextWidth(period);
-                    doc.text(period, pageWidth - margin - periodWidth, y);
-                    
-                    // Company
-                    y += spacing.line_height;
-                    doc.setFont('helvetica', 'italic');
-                    doc.text(company, margin, y);
-                    
-                    y += spacing.line_height + 2;
+                    y += spacing.after_header;
 
-                    // Responsibilities
-                    doc.setTextColor(...colors.text);
+                    // Description
+                    doc.setFont('helvetica', 'normal');
+                    doc.setFontSize(fonts.normal);
+                    
+                    const points = description.split('\n')
+                        .map(point => point.trim())
+                        .filter(point => point);
+
                     points.forEach(point => {
-                        const text = point.textContent.trim();
-                        const lines = doc.splitTextToSize(text, contentWidth - margin - 10);
-                        
-                        // Check if bullet point will fit on current page
-                        if (y + (lines.length * spacing.line_height) > pageHeight - 30) {
-                            doc.addPage();
-                            y = margin + 10;
-                        }
-                        
-                        y = addBulletPoint(text, y, 4);
+                        y = checkNewPage(y);
+                        y = addBulletPoint(point, y, 4);
                     });
 
-                    y += spacing.between_items;
+                    y += (index < experiences.length - 1) ? spacing.between_items : 0;
                 });
 
                 // Certifications
+                y = checkNewPage(y + 15);
+                y = addSection('Certifications', y);
                 const certifications = Array.from(document.querySelectorAll('.certification__card'));
-                
-                // Estimate certifications section height
-                const estimatedCertHeight = certifications.length * (spacing.line_height * 4);
-                
-                if (y + estimatedCertHeight > pageHeight - 60) {
-                    doc.addPage();
-                    y = margin;
-                }
 
-                y = addSection('Professional Certifications', y);
-
+                y += 4;
                 certifications.forEach((cert, index) => {
+                    y = checkNewPage(y + 6);
                     const title = cert.querySelector('.certification__title')?.textContent?.trim() || '';
                     const issuer = cert.querySelector('.certification__issuer')?.textContent?.trim() || '';
                     const date = cert.querySelector('.certification__date')?.textContent?.trim() || '';
 
-                    // Estimate height for this certification
-                    const titleLines = doc.splitTextToSize(title, contentWidth - 10);
-                    const estimatedHeight = (titleLines.length * spacing.line_height) + spacing.between_items + 10;
-
-                    // Check if certification will fit on current page
-                    if (y + estimatedHeight > pageHeight - 30) {
-                        doc.addPage();
-                        y = margin + 10;
-                    }
-
-                    // Certificate title
                     doc.setFont('helvetica', 'bold');
-                    doc.setTextColor(...colors.primary);
-                    doc.text(titleLines, margin, y);
-                    y += titleLines.length * spacing.line_height;
+                    doc.text(title, margin, y);
                     
-                    // Issuer and date
                     doc.setFont('helvetica', 'normal');
-                    doc.setTextColor(...colors.secondary);
-                    const issuerText = `${issuer} (${date})`;
-                    doc.text(issuerText, margin + 4, y);
-                    
-                    y += spacing.between_items + 4;
+                    doc.text(`${issuer} - ${date}`, margin + 4, y + 5);
+                    y += (index < certifications.length - 1) ? 12 : 6;
                 });
-                
+
+                // Contact Information
+                y = checkNewPage(y + 15);
+                y = addSection('Contact Information', y);
+                const contacts = Array.from(document.querySelectorAll('.contact__card'));
+
+                y += 4;
+                contacts.forEach(contact => {
+                    const title = contact.querySelector('.contact__card-title')?.textContent?.trim() || '';
+                    const data = contact.querySelector('.contact__card-data')?.textContent?.trim() || '';
+
+                    doc.setFont('helvetica', 'bold');
+                    doc.text(`${title}:`, margin, y);
+                    
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(data, margin + 30, y);
+                    y += spacing.between_items;
+                });
+
                 // Footer with page numbers
                 const pageCount = doc.internal.getNumberOfPages();
-                doc.setFont('helvetica', 'normal');
-                doc.setFontSize(fonts.small);
-                doc.setTextColor(...colors.light);
-                
                 for (let i = 1; i <= pageCount; i++) {
                     doc.setPage(i);
-                    const text = `Page ${i} of ${pageCount}`;
-                    doc.text(text, pageWidth - margin - doc.getTextWidth(text), pageHeight - 10);
+                    doc.setFont('helvetica', 'italic');
+                    doc.setFontSize(fonts.small);
+                    doc.text(`Page ${i} of ${pageCount}`, pageWidth - margin - 20, pageHeight - margin);
                 }
 
                 // Save the PDF
-                doc.save('Tarmizi_Hairudin_CV.pdf');
+                doc.save('Tarmizy_CV.pdf');
+
             } catch (error) {
-                console.error('Error generating CV:', error);
+                console.error('Error in generateCV:', error);
                 alert('An error occurred while generating the CV. Please try again.');
             }
         }
