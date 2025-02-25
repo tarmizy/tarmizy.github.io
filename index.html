@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarmizi Hairudin Ambo - Portfolio</title>
+    <title>Tarmizy Harsha - Portfolio</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header" id="header">
+    <header class="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Tarmizi.dev</a>
-            <div class="nav__menu" id="nav-menu">
+            <a href="#" class="nav__logo">
+                <i class="fas fa-terminal"></i> Tarmizy.DevOps
+            </a>
+            
+            <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#portfolio" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="#home" class="nav__link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link"><i class="fas fa-tools"></i> Skills</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li class="nav__item"><a href="#certifications" class="nav__link"><i class="fas fa-certificate"></i> Certifications</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
-                <div class="nav__close" id="nav-close">
-                    <i class="fas fa-times"></i>
-                </div>
-            </div>
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
@@ -36,19 +39,32 @@
     <!-- Main -->
     <main class="main">
         <!-- Home -->
-        <section class="home section" id="home">
+        <section class="home" id="home">
             <div class="home__container container">
-                <div class="home__content" data-aos="fade-right">
-                    <span class="home__greeting">Hello, I'm</span>
-                    <h1 class="home__title">Tarmizi Hairudin Ambo</h1>
-                    <h3 class="home__subtitle">DevOps | Cloud Architecture | Freelancer</h3>
-                    <p class="home__description">
-                        More than 7 years of experience in IT & Telecommunication, specializing in Cloud Computing (Alibaba, AWS, GCP),
-                        Linux systems, Docker, and Kubernetes. Passionate about researching and implementing new technologies.
-                    </p>
-                    <div class="home__buttons">
-                        <a href="#contact" class="button">Contact Me</a>
-                        <a href="#portfolio" class="button button--ghost">My Work</a>
+                <div class="home__content">
+                    <div class="home__social">
+                        <a href="https://github.com/tarmizy" target="_blank" class="home__social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/tarmizi-hairudin-ambo-9b78b0151" target="_blank" class="home__social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__img">
+                        <img src="img/profile.jpeg" alt="Profile picture">
+                        <div class="home__blob-bg"></div>
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title">Tarmizi Hairudin Ambo</h1>
+                        <h3 class="home__subtitle">DevOps Engineer & Cloud Architect</h3>
+                        <p class="home__description">
+                            Passionate about building and optimizing cloud infrastructure and DevOps solutions.
+                        </p>
+                        <a href="#contact" class="home__button">
+                            <span>Contact Me</span> <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -56,39 +72,250 @@
 
         <!-- About -->
         <section class="about section" id="about">
-            <h2 class="section__title" data-aos="fade-down">About Me</h2>
-            <div class="about__container container grid">
-                <div class="about__content" data-aos="fade-right">
-                    <div class="about__description">
-                        <p>
-                            Experienced professional in security, operations, and server maintenance with a strong focus on cloud architecture.
-                            As an IT engineer, I'm responsible for installation, operation, and maintenance of Linux servers.
-                        </p>
-                        <p>
-                            <strong>Specialties:</strong><br>
-                            • Cloud Computing (Alibaba, AWS, GCP)<br>
-                            • Linux Systems Administration<br>
-                            • Docker and Kubernetes<br>
-                            • High Availability Infrastructure<br>
-                            • Security Implementation<br>
-                            • DevOps Practices
-                        </p>
-                    </div>
+            <h2 class="section__title" data-text="About Me">About Me</h2>
+            <span class="section__subtitle">My Introduction</span>
+            <div class="about__container container">
+                <div class="about__content">
                     <div class="about__info">
                         <div class="about__box">
                             <i class="fas fa-server about__icon"></i>
-                            <h3 class="about__title">Experience</h3>
-                            <span class="about__subtitle">7+ Years</span>
+                            <h3>Experience</h3>
+                            <span>7+ Years</span>
                         </div>
                         <div class="about__box">
                             <i class="fas fa-cloud about__icon"></i>
-                            <h3 class="about__title">Cloud Platforms</h3>
-                            <span class="about__subtitle">AWS, GCP, Alibaba</span>
+                            <h3>Cloud Platforms</h3>
+                            <span>AWS, GCP, Alibaba</span>
                         </div>
                         <div class="about__box">
-                            <i class="fas fa-certificate about__icon"></i>
-                            <h3 class="about__title">Certifications</h3>
-                            <span class="about__subtitle">Cloud Specialist</span>
+                            <i class="fas fa-code-branch about__icon"></i>
+                            <h3>Projects</h3>
+                            <span>50+ Completed</span>
+                        </div>
+                    </div>
+                    <p class="about__description">
+                        Experienced IT professional specializing in DevOps practices, cloud architecture, and system administration. 
+                        Proven track record in implementing and managing cloud infrastructure, containerization, and automation solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills section" id="skills">
+            <h2 class="section__title" data-text="Skills">Skills</h2>
+            <span class="section__subtitle">My Technical Level</span>
+            <div class="skills__container container">
+                <div class="skills__content">
+                    <div class="skills__card">
+                        <div class="skills__card-header">
+                            <i class="fas fa-cloud skills__card-icon"></i>
+                            <h3 class="skills__card-title">Cloud & Infrastructure</h3>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-aws"></i>
+                                    <span>AWS</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-google"></i>
+                                    <span>Google Cloud</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-cloud"></i>
+                                    <span>Alibaba Cloud</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>Networking</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills__card">
+                        <div class="skills__card-header">
+                            <i class="fas fa-tools skills__card-icon"></i>
+                            <h3 class="skills__card-title">DevOps Tools</h3>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-docker"></i>
+                                    <span>Docker</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-dharmachakra"></i>
+                                    <h3>Kubernetes</h3>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-jenkins"></i>
+                                    <span>Jenkins</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-git-alt"></i>
+                                    <span>Git</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills__card">
+                        <div class="skills__card-header">
+                            <i class="fas fa-shield-alt skills__card-icon"></i>
+                            <h3 class="skills__card-title">System & Security</h3>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-linux"></i>
+                                    <span>Linux</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Security</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-terminal"></i>
+                                    <span>Shell Script</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-server"></i>
+                                    <span>System Admin</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills__card">
+                        <div class="skills__card-header">
+                            <i class="fas fa-code skills__card-icon"></i>
+                            <h3 class="skills__card-title">Programming</h3>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-python"></i>
+                                    <span>Python</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-js"></i>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-database"></i>
+                                    <span>SQL</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-html5"></i>
+                                    <span>HTML/CSS</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -97,193 +324,596 @@
 
         <!-- Experience -->
         <section class="experience section" id="experience">
-            <h2 class="section__title" data-aos="fade-down">Experience</h2>
-            <div class="experience__container container" data-aos="fade-up">
-                <div class="timeline">
-                    <div class="timeline__item">
-                        <h3 class="timeline__title">Infrastructure Lead</h3>
-                        <p class="timeline__company">ArgaPro</p>
-                        <p class="timeline__period">Mar 2020 - Present · 5 yrs</p>
-                        <p class="timeline__description">
-                            • Implemented and managed Kubernetes clusters with Rancher<br>
-                            • Designed and implemented cloud DC/DRC infrastructure<br>
-                            • Set up high availability services with Alibaba Cloud<br>
-                            • Implemented security measures (WAF, Fail2ban, SSL)<br>
-                            • Managed database services (PostgreSQL, MySQL, Redis)<br>
-                            • Implemented monitoring solutions (ELK, Cloud Monitoring)<br>
-                            • ISO 27001 implementation and compliance
-                        </p>
+            <h2 class="section__title" data-text="Experience">Experience</h2>
+            <span class="section__subtitle">My Journey</span>
+            <div class="experience__container container">
+                <div class="experience__timeline">
+                    <div class="experience__item">
+                        <div class="experience__header">
+                            <div class="experience__icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3 class="experience__title">Infrastructure Lead</h3>
+                            <span class="experience__date">Mar 2020 - Present</span>
+                        </div>
+                        <div class="experience__content">
+                            <span class="experience__subtitle">ArgaPro</span>
+                            <div class="experience__description">
+                                <ul class="experience__list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Designed and implemented high-availability DC-DRC infrastructure with auto failover capabilities on Alibaba Cloud</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Implemented container orchestration solutions including Kubernetes clusters with Rancher and Docker Swarm for DC-DRC setup</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Set up and managed database services including PostgreSQL, MySQL, and Redis using ApsaraDB with high availability</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Implemented comprehensive security measures including WAF, SSL/HTTPS, Cloudflare, Fail2ban, and ISO 27001 compliance</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Established monitoring and logging infrastructure using ELK Stack and Alibaba Cloud Monitoring</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Deployed and managed critical services including VPN, webmail, and React.js applications using Docker</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Implemented DevOps practices with Sonarqube for code scanning and load balancing for high availability</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Research and implementation of new technologies including GCP and manual Kubernetes cluster setup</span>
+                                    </li>
+                                </ul>
+                                <div class="experience__skills">
+                                    <h4>Key Skills:</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Alibaba Cloud</span>
+                                        <span class="skill-tag">Kubernetes</span>
+                                        <span class="skill-tag">Rancher</span>
+                                        <span class="skill-tag">Docker Swarm</span>
+                                        <span class="skill-tag">PostgreSQL</span>
+                                        <span class="skill-tag">MySQL</span>
+                                        <span class="skill-tag">Redis</span>
+                                        <span class="skill-tag">ELK Stack</span>
+                                        <span class="skill-tag">Cloudflare</span>
+                                        <span class="skill-tag">Fail2ban</span>
+                                        <span class="skill-tag">ISO 27001</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="timeline__item">
-                        <h3 class="timeline__title">DevOps Engineer</h3>
-                        <p class="timeline__company">PT Sinergi Teknologi Terpadu Indonesia</p>
-                        <p class="timeline__period">Aug 2020 - Jun 2022 · 1 yr 11 mos</p>
-                        <p class="timeline__description">
-                            • Managed Kubernetes clusters and CI/CD pipelines<br>
-                            • Implemented monitoring and alerting systems<br>
-                            • Designed cloud architecture for staging and production<br>
-                            • Managed microservices architecture<br>
-                            • Implemented auto-scaling solutions
-                        </p>
+                    <div class="experience__item">
+                        <div class="experience__header">
+                            <div class="experience__icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="experience__title">DevOps Engineer</h3>
+                            <span class="experience__date">Apr 2019 - Maret 2020</span>
+                        </div>
+                        <div class="experience__content">
+                            <span class="experience__subtitle">ArgaPro</span>
+                            <div class="experience__description">
+                                <ul class="experience__list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Designed and implemented cloud infrastructure on Digital Ocean and Alibaba Cloud, including VPC setup and server communications</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Implemented security measures including SSL certificates, IP filtering, HTTPS redirection, and Linux server hardening</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Set up and managed CI/CD pipelines with Jenkins and containerized deployments using Docker</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Configured high-availability services with HAProxy for reverse proxy and load balancing</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Managed database operations including PostgreSQL streaming and automated backup scripts for PostgreSQL and MySQL</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Implemented monitoring solutions with Zabbix for server health and security tracking</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Deployed and managed critical services including VPN, webmail, and React.js applications using Docker</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Configured network infrastructure using MikroTik and maintained comprehensive system documentation</span>
+                                    </li>
+                                </ul>
+                                <div class="experience__skills">
+                                    <h4>Key Skills:</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Digital Ocean</span>
+                                        <span class="skill-tag">Alibaba Cloud</span>
+                                        <span class="skill-tag">VPC</span>
+                                        <span class="skill-tag">SSL Certificates</span>
+                                        <span class="skill-tag">IP Filtering</span>
+                                        <span class="skill-tag">HTTPS Redirection</span>
+                                        <span class="skill-tag">Linux Server Hardening</span>
+                                        <span class="skill-tag">Jenkins</span>
+                                        <span class="skill-tag">Docker</span>
+                                        <span class="skill-tag">HAProxy</span>
+                                        <span class="skill-tag">PostgreSQL</span>
+                                        <span class="skill-tag">MySQL</span>
+                                        <span class="skill-tag">Zabbix</span>
+                                        <span class="skill-tag">MikroTik</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience__item">
+                        <div class="experience__header">
+                            <div class="experience__icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="experience__title">DevOps Engineer</h3>
+                            <span class="experience__date">Aug 2020 - Jun 2022</span>
+                        </div>
+                        <div class="experience__content">
+                            <span class="experience__subtitle">PT. Teknologi Solusi Terpadu</span>
+                            <div class="experience__description">
+                                <ul class="experience__list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Architected and implemented Kubernetes clusters for staging, pre-production, and production environments with autoscaling capabilities</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Designed and implemented CI/CD pipelines using Jenkins and GitLab for automated Kubernetes deployments</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Set up comprehensive monitoring and alerting systems using cloud monitoring solutions</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Implemented microservices architecture with MongoDB and Apsara Redis for queuing and caching</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Optimized Kubernetes cluster performance, including memory consumption and persistent volume management</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Provided cloud architecture solutions and cost management strategies for infrastructure optimization</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Maintained and optimized GitLab server and MongoDB databases for high availability</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Conducted performance testing using Busybox for Kubernetes autoscaling validation</span>
+                                    </li>
+                                </ul>
+                                <div class="experience__skills">
+                                    <h4>Key Skills:</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Kubernetes</span>
+                                        <span class="skill-tag">Jenkins</span>
+                                        <span class="skill-tag">GitLab</span>
+                                        <span class="skill-tag">MongoDB</span>
+                                        <span class="skill-tag">Redis</span>
+                                        <span class="skill-tag">Microservices</span>
+                                        <span class="skill-tag">Cloud Architecture</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="timeline__item">
-                        <h3 class="timeline__title">System Administrator</h3>
-                        <p class="timeline__company">TrueMoney Indonesia</p>
-                        <p class="timeline__period">Feb 2018 - Apr 2019 · 1 yr 3 mos</p>
-                        <p class="timeline__description">
-                            • Managed VMware infrastructure and vCenter<br>
-                            • Handled application deployments<br>
-                            • Maintained server infrastructure<br>
-                            • Implemented CI/CD pipelines<br>
-                            • Server configuration (HAProxy, Tomcat)
-                        </p>
+                    <div class="experience__item">
+                        <div class="experience__header">
+                            <div class="experience__icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3 class="experience__title">System Administrator and Development Operation Staff</h3>
+                            <span class="experience__date">Feb 2018 - Apr 2019</span>
+                        </div>
+                        <div class="experience__content">
+                            <span class="experience__subtitle">TrueMoney Indonesia</span>
+                            <div class="experience__description">
+                                <ul class="experience__list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Managed VMware infrastructure and vCenter operations, including maintenance and optimization</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Configured and maintained high-availability services using HAProxy and Tomcat on RedHat OS</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Performed server housekeeping, network troubleshooting, and AWS domain management</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Implemented Docker containerization and managed application deployments</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Developed automation scripts for continuous integration and server management tasks</span>
+                                    </li>
+                                </ul>
+                                <div class="experience__skills">
+                                    <h4>Key Skills:</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">VMware</span>
+                                        <span class="skill-tag">HAProxy</span>
+                                        <span class="skill-tag">RedHat</span>
+                                        <span class="skill-tag">AWS</span>
+                                        <span class="skill-tag">Docker</span>
+                                        <span class="skill-tag">Shell Scripting</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience__item">
+                        <div class="experience__header">
+                            <div class="experience__icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3 class="experience__title">VSAT Engineer</h3>
+                            <span class="experience__date">Jan 2017 - Mar 2017</span>
+                        </div>
+                        <div class="experience__content">
+                            <span class="experience__subtitle">PT Halik Selindo Alpha</span>
+                            <div class="experience__description">
+                                <ul class="experience__list">
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Performed end-to-end VSAT system installations and equipment setup for satellite communications</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Executed precise VSAT antenna pointing and alignment procedures to establish hub connectivity</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Conducted regular maintenance, troubleshooting, and optimization of VSAT systems and configurations</span>
+                                    </li>
+                                </ul>
+                                <div class="experience__skills">
+                                    <h4>Key Skills:</h4>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">VSAT Systems</span>
+                                        <span class="skill-tag">Satellite Communications</span>
+                                        <span class="skill-tag">Network Configuration</span>
+                                        <span class="skill-tag">Technical Maintenance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="projects section" id="projects">
+            <h2 class="section__title" data-text="Projects">Projects</h2>
+            <span class="section__subtitle">Recent Work</span>
+            <div class="projects__container container">
+                <!-- Hosting Project -->
+                <div class="project__item">
+                    <div class="project__header">
+                        <h3 class="project__title">Hosting - pesanhosting.com</h3>
+                        <span class="project__date">Jul 2024 - Present</span>
+                    </div>
+                    <div class="project__content">
+                        <ul class="project__list">
+                            <li><i class="fas fa-check-circle"></i><span>Setup and configured infrastructure for hosting services including cPanel and DNS</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Implemented database management and service monitoring systems</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Developed landing page theme and integrated payment gateway</span></li>
+                        </ul>
+                        <div class="project__skills">
+                            <h4>Technologies Used:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Web Hosting</span>
+                                <span class="skill-tag">cPanel</span>
+                                <span class="skill-tag">VMware</span>
+                                <span class="skill-tag">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Online AWS Project -->
+                <div class="project__item">
+                    <div class="project__header">
+                        <h3 class="project__title">Game Online AWS Infrastructure</h3>
+                        <span class="project__date">Oct 2023 - Present</span>
+                    </div>
+                    <div class="project__content">
+                        <ul class="project__list">
+                            <li><i class="fas fa-check-circle"></i><span>Architected AWS infrastructure with VPC and EKS</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Set up CI/CD pipeline with Jenkins for Kubernetes</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Implemented RDS and Kafka message broker</span></li>
+                        </ul>
+                        <div class="project__skills">
+                            <h4>Technologies Used:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">EKS</span>
+                                <span class="skill-tag">Kafka</span>
+                                <span class="skill-tag">Jenkins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIMRS Project -->
+                <div class="project__item">
+                    <div class="project__header">
+                        <h3 class="project__title">SIMRS (Hospital Management)</h3>
+                        <span class="project__date">Jul 2023 - Jul 2024</span>
+                    </div>
+                    <div class="project__content">
+                        <ul class="project__list">
+                            <li><i class="fas fa-check-circle"></i><span>Implemented monitoring with Datadog and Grafana Loki</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Integrated Wazuh for security monitoring</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Created custom monitoring dashboards</span></li>
+                        </ul>
+                        <div class="project__skills">
+                            <h4>Technologies Used:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Grafana</span>
+                                <span class="skill-tag">Datadog</span>
+                                <span class="skill-tag">ArgoCD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DigiPOS Project -->
+                <div class="project__item">
+                    <div class="project__header">
+                        <h3 class="project__title">DigiPOS</h3>
+                        <span class="project__date">May 2022 - Jul 2023</span>
+                    </div>
+                    <div class="project__content">
+                        <ul class="project__list">
+                            <li><i class="fas fa-check-circle"></i><span>Implemented AWS services (EKS, S3, AmazonMQ)</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Developed test apps for message queue testing</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Managed Kong API Gateway and Consul</span></li>
+                        </ul>
+                        <div class="project__skills">
+                            <h4>Technologies Used:</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">FluxCD</span>
+                                <span class="skill-tag">Kong</span>
+                                <span class="skill-tag">Consul</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Projects -->
+                <div class="project__item" style="grid-column: 1 / -1;">
+                    <div class="project__header">
+                        <h3 class="project__title">Other Notable Projects</h3>
+                    </div>
+                    <div class="project__content">
+                        <div class="project__grid">
+                            <div class="project__card">
+                                <h4>Bigsight & BigScore</h4>
+                                <p>Application deployment and integration using Openshift and PlayCourt</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Openshift</span>
+                                    <span class="skill-tag">MySQL</span>
+                                </div>
+                            </div>
+                            <div class="project__card">
+                                <h4>Buddyku</h4>
+                                <p>AWS-based social platform with Neptune graph database</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">AWS Neptune</span>
+                                    <span class="skill-tag">EKS</span>
+                                </div>
+                            </div>
+                            <div class="project__card">
+                                <h4>CATS System</h4>
+                                <p>Multi-cloud implementation with service mesh</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">GCP</span>
+                                    <span class="skill-tag">Istio</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills -->
-        <section class="skills section" id="skills">
-            <h2 class="section__title" data-aos="fade-down">Skills</h2>
-            <div class="skills__container container grid">
-                <div class="skills__content" data-aos="fade-right">
-                    <div class="skills__box">
-                        <h3 class="skills__title">Cloud & Infrastructure</h3>
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class="fab fa-aws"></i>
-                                <div class="skills__info">
-                                    <h3>AWS</h3>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class="fab fa-google"></i>
-                                <div class="skills__info">
-                                    <h3>GCP</h3>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class="fas fa-cloud"></i>
-                                <div class="skills__info">
-                                    <h3>Alibaba Cloud</h3>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills__content" data-aos="fade-left">
-                    <div class="skills__box">
-                        <h3 class="skills__title">DevOps & Tools</h3>
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class="fab fa-docker"></i>
-                                <div class="skills__info">
-                                    <h3>Docker</h3>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class="fas fa-dharmachakra"></i>
-                                <div class="skills__info">
-                                    <h3>Kubernetes</h3>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class="fab fa-jenkins"></i>
-                                <div class="skills__info">
-                                    <h3>CI/CD</h3>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Certifications -->
+        <section class="certifications section" id="certifications">
+            <h2 class="section__title" data-text="Certifications">Licenses & Certifications</h2>
+            <span class="section__subtitle">Professional Development</span>
 
-        <!-- Portfolio -->
-        <section class="portfolio section" id="portfolio">
-            <h2 class="section__title" data-aos="fade-down">Recent Projects</h2>
-            <div class="portfolio__container container grid">
-                <div class="portfolio__item" data-aos="fade-up">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Game Online AWS Infrastructure</h3>
-                        <p class="portfolio__description">
-                            Implemented complete AWS infrastructure including EKS, RDS, VPC, and CI/CD with Jenkins.
-                            Implemented message broker using Kafka and managed deployment processes.
-                        </p>
-                        <div class="portfolio__stack">
-                            <span>AWS</span>
-                            <span>EKS</span>
-                            <span>RDS</span>
-                            <span>Jenkins</span>
+            <div class="certifications__container container">
+                <!-- Alibaba Cloud Certifications -->
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-cloud certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Cloud Computing Specialist - Load Balancer</h3>
+                            <p class="certification__issuer">Alibaba Cloud</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="portfolio__item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">SIMRS - Hospital Management System</h3>
-                        <p class="portfolio__description">
-                            Created comprehensive monitoring solutions using Datadog and Grafana Loki.
-                            Implemented security monitoring with Wazuh.
-                        </p>
-                        <div class="portfolio__stack">
-                            <span>Grafana</span>
-                            <span>AWS</span>
-                            <span>ArgoCD</span>
-                            <span>Datadog</span>
-                        </div>
-                    </div>
+                    <p class="certification__date">Issued Jun 2020 · Expired Jun 2022</p>
+                    <p class="certification__credential">ID: ACLC062006000620641</p>
                 </div>
 
-                <div class="portfolio__item" data-aos="fade-up">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">DigiPOS</h3>
-                        <p class="portfolio__description">
-                            Implemented complex AWS infrastructure with FluxCD, AmazonMQ, and Kubernetes.
-                            Set up complete monitoring and deployment pipeline.
-                        </p>
-                        <div class="portfolio__stack">
-                            <span>AWS</span>
-                            <span>FluxCD</span>
-                            <span>Kubernetes</span>
-                            <span>Jenkins</span>
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-cloud certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Cloud Native - Monoliths to Microservices</h3>
+                            <p class="certification__issuer">Alibaba Cloud</p>
                         </div>
                     </div>
+                    <p class="certification__date">Issued Jun 2020 · Expired Jun 2022</p>
+                    <p class="certification__credential">ID: CWD029200600013815</p>
+                </div>
+
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-cloud certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Hybrid/Multi-cloud Kubernetes Management</h3>
+                            <p class="certification__issuer">Alibaba Cloud</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued Jun 2020 · Expired Jun 2022</p>
+                    <p class="certification__credential">ID: CWD031200600013840</p>
+                </div>
+
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-cloud certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Academy Day Alibaba Cloud</h3>
+                            <p class="certification__issuer">Alibaba Cloud</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued Mar 2020</p>
+                </div>
+
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-server certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Apsara Clouder - Cloud Server Management</h3>
+                            <p class="certification__issuer">Alibaba Cloud</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued Mar 2020 · Expired Mar 2022</p>
+                </div>
+
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-database certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Apsara Clouder - Cloud Database Management</h3>
+                            <p class="certification__issuer">Alibaba Cloud</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued Mar 2020 · Expired Mar 2022</p>
+                    <p class="certification__credential">ID: ACLC04200300005006</p>
+                </div>
+
+                <!-- Udemy Certifications -->
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-cogs certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">DevOps Series - Ansible Automation</h3>
+                            <p class="certification__issuer">Udemy</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued Sep 2019</p>
+                </div>
+
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-cloud certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Alibaba Cloud Computing Certified Associate</h3>
+                            <p class="certification__issuer">Udemy</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued Jul 2019</p>
+                </div>
+
+                <!-- Gunadarma University Certifications -->
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-database certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Database Fundamentals</h3>
+                            <p class="certification__issuer">Gunadarma University</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued Nov 2016</p>
+                </div>
+
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-mobile-alt certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Android Mobile Application Development</h3>
+                            <p class="certification__issuer">Gunadarma University</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued Jan 2016</p>
+                </div>
+
+                <div class="certification__card">
+                    <div class="certification__header">
+                        <i class="fas fa-file-code certification__icon"></i>
+                        <div>
+                            <h3 class="certification__title">Introduction To Oracle Report Developer</h3>
+                            <p class="certification__issuer">Gunadarma University</p>
+                        </div>
+                    </div>
+                    <p class="certification__date">Issued May 2013</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact -->
         <section class="contact section" id="contact">
-            <h2 class="section__title" data-aos="fade-down">Contact Me</h2>
-            <div class="contact__container container grid" data-aos="fade-up">
+            <h2 class="section__title" data-text="Contact Me">Contact Me</h2>
+            <span class="section__subtitle">Get in Touch</span>
+            <div class="contact__container container">
                 <div class="contact__content">
-                    <div class="contact__info">
-                        <div class="contact__card">
-                            <i class="fab fa-linkedin contact__card-icon"></i>
-                            <h3 class="contact__card-title">LinkedIn</h3>
-                            <span class="contact__card-data">Tarmizi Hairudin Ambo</span>
-                            <a href="https://linkedin.com/in/tarmizi-hairudin-ambo-9b78b0151" target="_blank" class="contact__button">
-                                Connect <i class="fas fa-arrow-right contact__button-icon"></i>
-                            </a>
-                        </div>
-                        <div class="contact__card">
-                            <i class="fab fa-github contact__card-icon"></i>
-                            <h3 class="contact__card-title">GitHub</h3>
-                            <span class="contact__card-data">@tarmizy</span>
-                            <a href="https://github.com/tarmizy" target="_blank" class="contact__button">
-                                Follow <i class="fas fa-arrow-right contact__button-icon"></i>
-                            </a>
-                        </div>
+                    <div class="contact__card">
+                        <i class="fas fa-envelope contact__card-icon"></i>
+                        <h3 class="contact__card-title">Email</h3>
+                        <span class="contact__card-data">tarmizy@gmail.com</span>
+                        <a href="mailto:tarmizy@gmail.com" class="contact__button">
+                            Write me <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="contact__card">
+                        <i class="fab fa-whatsapp contact__card-icon"></i>
+                        <h3 class="contact__card-title">WhatsApp</h3>
+                        <span class="contact__card-data">+62 823-1225-5030</span>
+                        <a href="https://wa.me/+6282312255030" target="_blank" class="contact__button">
+                            Chat me <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="contact__card">
+                        <i class="fab fa-linkedin contact__card-icon"></i>
+                        <h3 class="contact__card-title">LinkedIn</h3>
+                        <span class="contact__card-data">Tarmizi Hairudin Ambo</span>
+                        <a href="https://linkedin.com/in/tarmizi-hairudin-ambo-9b78b0151" target="_blank" class="contact__button">
+                            Connect <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -297,19 +927,16 @@
                 <h3 class="footer__title">Tarmizi Hairudin Ambo</h3>
                 <p class="footer__description">DevOps Engineer & Cloud Architect</p>
             </div>
-            <div class="footer__content">
-                <h3 class="footer__title">Social</h3>
-                <ul class="footer__social">
-                    <a href="https://github.com/tarmizy" target="_blank" class="footer__social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/tarmizi-hairudin-ambo-9b78b0151" target="_blank" class="footer__social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </ul>
+            <div class="footer__social">
+                <a href="https://github.com/tarmizy" target="_blank" class="footer__social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/tarmizi-hairudin-ambo-9b78b0151" target="_blank" class="footer__social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
+            <p class="footer__copy">&#169; 2025 Tarmizi Hairudin Ambo. All rights reserved</p>
         </div>
-        <p class="footer__copy">&#169; 2025 Tarmizi Hairudin Ambo. All rights reserved</p>
     </footer>
 
     <!-- Scroll to top -->
@@ -317,17 +944,7 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- Scroll Reveal -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <!-- Main JS -->
     <script src="js/main.js"></script>
-    
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
 </body>
 </html>
