@@ -1019,58 +1019,38 @@
                 // A4 size constants
                 const pageWidth = 210;  // A4 width in mm
                 const pageHeight = 297; // A4 height in mm
-                const margin = 20;      // Smaller margin
+                const margin = 20;      // Reduced margins
                 const contentWidth = pageWidth - (margin * 2);
                 let y = margin;
 
-                // Font sizes
+                // Font sizes and styling
                 const fonts = {
-                    header: 18,
-                    subheader: 14,
-                    section: 12,
-                    normal: 10,
-                    small: 9
+                    header: 14,      // Slightly smaller header
+                    subheader: 11,   // Reduced subheader
+                    section: 12,     // Compact section headers
+                    normal: 10,      // Keep body text readable
+                    small: 9         // Contact details
                 };
 
-                // Spacing
+                // Professional color scheme (keep the same colors)
+                const colors = {
+                    primary: [41, 128, 185],     // Professional blue
+                    secondary: [52, 73, 94],     // Dark slate
+                    text: [44, 62, 80],          // Clear readable text
+                    light: [189, 195, 199]       // Subtle accents
+                };
+
+                // Tighter spacing
                 const spacing = {
-                    after_header: 8,
-                    after_section: 10,
-                    between_items: 6,
-                    line_height: 5
+                    after_header: 8,     // Reduced header spacing
+                    after_section: 6,    // Tighter section spacing
+                    between_items: 4,    // Compact item spacing
+                    line_height: 5,      // Tighter but still readable
+                    paragraph: 3         // Reduced paragraph spacing
                 };
 
-                function addSection(title, y) {
-                    doc.setDrawColor(100, 100, 100);
-                    doc.setFillColor(240, 240, 240);
-                    doc.rect(margin, y - 4, contentWidth, 7, 'F');
-                    doc.setFont('helvetica', 'bold');
-                    doc.setFontSize(fonts.section);
-                    doc.setTextColor(50, 50, 50);
-                    doc.text(title.toUpperCase(), margin + 2, y + 1);
-                    doc.setFont('helvetica', 'normal');
-                    doc.setTextColor(0, 0, 0);
-                    return y + spacing.after_section;
-                }
-
-                function addParagraph(text, y, indent = 0) {
-                    doc.setFontSize(fonts.normal);
-                    const maxWidth = contentWidth - indent;
-                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
-                    doc.text(lines, margin + indent, y);
-                    return y + (lines.length * spacing.line_height) + 3;
-                }
-
-                function addBulletPoint(text, y, indent = 0) {
-                    doc.setFontSize(fonts.normal);
-                    doc.text('•', margin + indent, y);
-                    const maxWidth = contentWidth - (indent + 6);
-                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
-                    doc.text(lines, margin + indent + 4, y);
-                    return y + (lines.length * spacing.line_height) + 2;
-                }
-
-                function checkNewPage(y, minSpace = 40) {
+                // Helper functions
+                function checkNewPage(y, minSpace = 35) { // Reduced minimum space
                     if (y > pageHeight - minSpace) {
                         doc.addPage();
                         return margin;
@@ -1078,138 +1058,262 @@
                     return y;
                 }
 
-                // Header
+                function addSection(title, y, content = '') {
+                    y = checkNewPage(y, 45);  // Reduced space check
+                    
+                    // Section divider
+                    doc.setDrawColor(...colors.light);
+                    doc.setLineWidth(0.5);
+                    doc.line(margin, y, pageWidth - margin, y);
+                    y += 2; // Reduced space after line
+
+                    // Section title
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(fonts.section);
+                    doc.setTextColor(...colors.primary);
+                    doc.text(title.toUpperCase(), margin, y);
+                    
+                    return y + spacing.after_section;
+                }
+
+                function addParagraph(text, y, indent = 0) {
+                    y = checkNewPage(y, 30);
+                    doc.setFontSize(fonts.normal);
+                    const maxWidth = contentWidth - indent;
+                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
+                    doc.text(lines, margin + indent, y);
+                    return y + (lines.length * spacing.line_height) + spacing.paragraph;
+                }
+
+                function addBulletPoint(text, y, indent = 0) {
+                    y = checkNewPage(y, 30);
+                    doc.setFontSize(fonts.normal);
+                    const bullet = '•';
+                    doc.text(bullet, margin + indent, y);
+                    const maxWidth = contentWidth - (indent + 10);
+                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
+                    doc.text(lines, margin + indent + 6, y);
+                    return y + (lines.length * spacing.line_height) + 2;
+                }
+
+                // Header with tighter spacing
                 doc.setFont('helvetica', 'bold');
                 doc.setFontSize(fonts.header);
+                doc.setTextColor(...colors.primary);
                 const name = document.querySelector('.home__title')?.textContent || 'Tarmizi Hairudin Ambo';
-                doc.text(name, margin, y + 8);
+                doc.text(name, margin, y);
 
-                doc.setFontSize(fonts.subheader);
-                const role = document.querySelector('.home__subtitle')?.textContent || 'DevOps Engineer & Cloud Architect';
-                doc.text(role, margin, y + 18);
-
-                // Add horizontal line
-                doc.setDrawColor(0, 0, 0);
-                doc.setLineWidth(0.5);
-                doc.line(margin, y + 22, pageWidth - margin, y + 22);
-
-                doc.setFont('helvetica', 'normal');
-                doc.setFontSize(fonts.normal);
-                const description = document.querySelector('.home__description')?.textContent || '';
-                y = addParagraph(description, y + 30);
-
-                // About Me
-                y = checkNewPage(y + 15);
-                y = addSection('About Me', y);
-                const aboutText = document.querySelector('.about__description')?.textContent || '';
-                y = addParagraph(aboutText, y + 4);
-
-                // Skills
-                y = checkNewPage(y + 15);
-                y = addSection('Key Skills', y);
-                const skills = Array.from(document.querySelectorAll('.skills__card-title')).map(skill => skill.textContent);
-
-                // Display skills in 3 columns
-                const columns = 3;
-                const skillsPerColumn = Math.ceil(skills.length / columns);
-                const columnWidth = contentWidth / columns;
-
-                y += 4;
-                skills.forEach((skill, index) => {
-                    const column = Math.floor(index / skillsPerColumn);
-                    const xPos = margin + (column * columnWidth);
-                    const yPos = y + ((index % skillsPerColumn) * spacing.between_items);
-
-                    doc.text('•', xPos, yPos);
-                    doc.text(skill, xPos + 4, yPos);
+                // Contact info - right aligned in header
+                const contacts = Array.from(document.querySelectorAll('.contact__card'));
+                doc.setFontSize(fonts.small);
+                doc.setTextColor(...colors.secondary);
+                let contactY = y;
+                contacts.forEach(contact => {
+                    const data = contact.querySelector('.contact__card-data')?.textContent?.trim() || '';
+                    const xPos = pageWidth - margin - doc.getTextWidth(data);
+                    doc.text(data, xPos, contactY);
+                    contactY += spacing.line_height;
                 });
 
-                y += (skillsPerColumn * spacing.between_items) + spacing.after_section;
+                // Role/Title
+                y += spacing.line_height + 1;
+                doc.setFontSize(fonts.subheader);
+                doc.setTextColor(...colors.secondary);
+                const role = document.querySelector('.home__subtitle')?.textContent || 'DevOps Engineer & Cloud Architect';
+                doc.text(role, margin, y);
 
-                // Experience
-                y = checkNewPage(y + 15);
-                y = addSection('Professional Experience', y);
+                // Divider line
+                y += spacing.line_height + 2;
+                doc.setDrawColor(...colors.light);
+                doc.setLineWidth(0.5);
+                doc.line(margin, y, pageWidth - margin, y);
+
+                // Profile Summary
+                y += spacing.line_height + 2;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(fonts.normal);
+                doc.setTextColor(...colors.text);
+                const description = document.querySelector('.home__description')?.textContent || '';
+                const summaryLines = doc.splitTextToSize(description, contentWidth);
+                doc.text(summaryLines, margin, y);
+                y += (summaryLines.length * spacing.line_height) + spacing.after_section;
+
+                // Technical Skills Section
+                y = addSection('Technical Skills', y);
+
+                // Two-column skills layout
+                const columnWidth = (contentWidth - 5) / 2;
+                let leftColY = y + spacing.line_height;
+                let rightColY = y + spacing.line_height;
+
+                const skillCards = Array.from(document.querySelectorAll('.skills__card'));
+                
+                skillCards.forEach((card, index) => {
+                    const isRightColumn = index % 2 === 1;
+                    let currentY = isRightColumn ? rightColY : leftColY;
+                    const xPos = margin + (isRightColumn ? columnWidth + 5 : 0);
+
+                    // Check for page break
+                    if (currentY > pageHeight - 40) {
+                        doc.addPage();
+                        leftColY = margin + spacing.line_height;
+                        rightColY = margin + spacing.line_height;
+                        currentY = isRightColumn ? rightColY : leftColY;
+                    }
+
+                    const category = card.querySelector('.skills__card-title')?.textContent || '';
+                    const skills = Array.from(card.querySelectorAll('.skills__info span'))
+                        .map(skill => skill.textContent);
+
+                    // Category header
+                    doc.setFont('helvetica', 'bold');
+                    doc.setTextColor(...colors.primary);
+                    doc.text(category + ':', xPos, currentY);
+
+                    // Skills list
+                    doc.setFont('helvetica', 'normal');
+                    doc.setTextColor(...colors.text);
+                    const skillText = skills.join(' • ');
+                    const skillLines = doc.splitTextToSize(skillText, columnWidth - 4);
+                    doc.text(skillLines, xPos + 3, currentY + spacing.line_height);
+
+                    const itemHeight = (skillLines.length * spacing.line_height) + spacing.between_items + 1;
+                    if (isRightColumn) {
+                        rightColY += itemHeight;
+                    } else {
+                        leftColY += itemHeight;
+                    }
+                });
+
+                // Move to next section
+                y = Math.max(leftColY, rightColY) + spacing.between_items;
+
+                // Experience section
                 const experiences = Array.from(document.querySelectorAll('.experience__item'));
+                
+                // Estimate experience section height
+                const estimatedExpHeight = experiences.reduce((acc, exp) => {
+                    const points = Array.from(exp.querySelectorAll('.experience__list li span')).length;
+                    return acc + (points * spacing.line_height) + spacing.after_header + 15;
+                }, 0);
+
+                if (y + estimatedExpHeight > pageHeight - 60) {
+                    doc.addPage();
+                    y = margin;
+                }
+
+                y = addSection('Professional Experience', y);
 
                 experiences.forEach((exp, index) => {
-                    y = checkNewPage(y + 8);
+                    // Estimate height for this experience item
+                    const points = Array.from(exp.querySelectorAll('.experience__list li span'));
+                    const estimatedHeight = (points.length * spacing.line_height) + spacing.after_header + 15;
+
+                    // Check if experience item will fit on current page
+                    if (y + estimatedHeight > pageHeight - 40) {
+                        doc.addPage();
+                        y = margin + 10;
+                    }
+
                     const title = exp.querySelector('.experience__title')?.textContent?.trim() || '';
-                    const description = exp.querySelector('.experience__description')?.textContent?.trim() || '';
+                    const company = exp.querySelector('.experience__company')?.textContent?.trim() || '';
+                    const period = exp.querySelector('.experience__period')?.textContent?.trim() || '';
 
                     // Title
                     doc.setFont('helvetica', 'bold');
-                    doc.setFontSize(fonts.normal);
+                    doc.setTextColor(...colors.primary);
                     doc.text(title, margin, y);
-                    y += spacing.after_header;
-
-                    // Description
-                    doc.setFont('helvetica', 'normal');
-                    doc.setFontSize(fonts.normal);
                     
-                    const points = description.split('\n')
-                        .map(point => point.trim())
-                        .filter(point => point);
+                    // Period (right-aligned)
+                    doc.setFont('helvetica', 'normal');
+                    doc.setTextColor(...colors.secondary);
+                    const periodWidth = doc.getTextWidth(period);
+                    doc.text(period, pageWidth - margin - periodWidth, y);
+                    
+                    // Company
+                    y += spacing.line_height;
+                    doc.setFont('helvetica', 'italic');
+                    doc.text(company, margin, y);
+                    
+                    y += spacing.line_height + 2;
 
+                    // Responsibilities
+                    doc.setTextColor(...colors.text);
                     points.forEach(point => {
-                        y = checkNewPage(y);
-                        y = addBulletPoint(point, y, 4);
+                        const text = point.textContent.trim();
+                        const lines = doc.splitTextToSize(text, contentWidth - margin - 10);
+                        
+                        // Check if bullet point will fit on current page
+                        if (y + (lines.length * spacing.line_height) > pageHeight - 30) {
+                            doc.addPage();
+                            y = margin + 10;
+                        }
+                        
+                        y = addBulletPoint(text, y, 4);
                     });
 
-                    y += (index < experiences.length - 1) ? spacing.between_items : 0;
+                    y += spacing.between_items;
                 });
 
                 // Certifications
-                y = checkNewPage(y + 15);
-                y = addSection('Certifications', y);
                 const certifications = Array.from(document.querySelectorAll('.certification__card'));
+                
+                // Estimate certifications section height
+                const estimatedCertHeight = certifications.length * (spacing.line_height * 4);
+                
+                if (y + estimatedCertHeight > pageHeight - 60) {
+                    doc.addPage();
+                    y = margin;
+                }
 
-                y += 4;
+                y = addSection('Professional Certifications', y);
+
                 certifications.forEach((cert, index) => {
-                    y = checkNewPage(y + 6);
                     const title = cert.querySelector('.certification__title')?.textContent?.trim() || '';
                     const issuer = cert.querySelector('.certification__issuer')?.textContent?.trim() || '';
                     const date = cert.querySelector('.certification__date')?.textContent?.trim() || '';
 
+                    // Estimate height for this certification
+                    const titleLines = doc.splitTextToSize(title, contentWidth - 10);
+                    const estimatedHeight = (titleLines.length * spacing.line_height) + spacing.between_items + 10;
+
+                    // Check if certification will fit on current page
+                    if (y + estimatedHeight > pageHeight - 30) {
+                        doc.addPage();
+                        y = margin + 10;
+                    }
+
+                    // Certificate title
                     doc.setFont('helvetica', 'bold');
-                    doc.text(title, margin, y);
+                    doc.setTextColor(...colors.primary);
+                    doc.text(titleLines, margin, y);
+                    y += titleLines.length * spacing.line_height;
                     
+                    // Issuer and date
                     doc.setFont('helvetica', 'normal');
-                    doc.text(`${issuer} - ${date}`, margin + 4, y + 5);
-                    y += (index < certifications.length - 1) ? 12 : 6;
-                });
-
-                // Contact Information
-                y = checkNewPage(y + 15);
-                y = addSection('Contact Information', y);
-                const contacts = Array.from(document.querySelectorAll('.contact__card'));
-
-                y += 4;
-                contacts.forEach(contact => {
-                    const title = contact.querySelector('.contact__card-title')?.textContent?.trim() || '';
-                    const data = contact.querySelector('.contact__card-data')?.textContent?.trim() || '';
-
-                    doc.setFont('helvetica', 'bold');
-                    doc.text(`${title}:`, margin, y);
+                    doc.setTextColor(...colors.secondary);
+                    const issuerText = `${issuer} (${date})`;
+                    doc.text(issuerText, margin + 4, y);
                     
-                    doc.setFont('helvetica', 'normal');
-                    doc.text(data, margin + 30, y);
-                    y += spacing.between_items;
+                    y += spacing.between_items + 4;
                 });
-
+                
                 // Footer with page numbers
                 const pageCount = doc.internal.getNumberOfPages();
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(fonts.small);
+                doc.setTextColor(...colors.light);
+                
                 for (let i = 1; i <= pageCount; i++) {
                     doc.setPage(i);
-                    doc.setFont('helvetica', 'italic');
-                    doc.setFontSize(fonts.small);
-                    doc.text(`Page ${i} of ${pageCount}`, pageWidth - margin - 20, pageHeight - margin);
+                    const text = `Page ${i} of ${pageCount}`;
+                    doc.text(text, pageWidth - margin - doc.getTextWidth(text), pageHeight - 10);
                 }
 
                 // Save the PDF
-                doc.save('Tarmizy_CV.pdf');
-
+                doc.save('Tarmizi_Hairudin_CV.pdf');
             } catch (error) {
-                console.error('Error in generateCV:', error);
+                console.error('Error generating CV:', error);
                 alert('An error occurred while generating the CV. Please try again.');
             }
         }
