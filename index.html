@@ -65,6 +65,9 @@
                         <a href="#contact" class="home__button">
                             <span>Contact Me</span> <i class="fas fa-arrow-right"></i>
                         </a>
+                        <a href="#" onclick="generateCV(event)" class="home__button">
+                            <span>Download CV</span> <i class="fas fa-download"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -946,5 +949,216 @@
 
     <!-- Main JS -->
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function generateCV(e) {
+            e.preventDefault();
+            
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF({
+                    format: 'a4',
+                    unit: 'mm',
+                    orientation: 'portrait'
+                });
+
+                // A4 size constants
+                const pageWidth = 210;  // A4 width in mm
+                const pageHeight = 297; // A4 height in mm
+                const margin = 20;      // Smaller margin
+                const contentWidth = pageWidth - (margin * 2);
+                let y = margin;
+
+                // Font sizes
+                const fonts = {
+                    header: 18,
+                    subheader: 14,
+                    section: 12,
+                    normal: 10,
+                    small: 9
+                };
+
+                // Spacing
+                const spacing = {
+                    after_header: 8,
+                    after_section: 10,
+                    between_items: 6,
+                    line_height: 5
+                };
+
+                function addSection(title, y) {
+                    doc.setDrawColor(100, 100, 100);
+                    doc.setFillColor(240, 240, 240);
+                    doc.rect(margin, y - 4, contentWidth, 7, 'F');
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(fonts.section);
+                    doc.setTextColor(50, 50, 50);
+                    doc.text(title.toUpperCase(), margin + 2, y + 1);
+                    doc.setFont('helvetica', 'normal');
+                    doc.setTextColor(0, 0, 0);
+                    return y + spacing.after_section;
+                }
+
+                function addParagraph(text, y, indent = 0) {
+                    doc.setFontSize(fonts.normal);
+                    const maxWidth = contentWidth - indent;
+                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
+                    doc.text(lines, margin + indent, y);
+                    return y + (lines.length * spacing.line_height) + 3;
+                }
+
+                function addBulletPoint(text, y, indent = 0) {
+                    doc.setFontSize(fonts.normal);
+                    doc.text('•', margin + indent, y);
+                    const maxWidth = contentWidth - (indent + 6);
+                    const lines = doc.splitTextToSize(text.trim(), maxWidth);
+                    doc.text(lines, margin + indent + 4, y);
+                    return y + (lines.length * spacing.line_height) + 2;
+                }
+
+                function checkNewPage(y, minSpace = 40) {
+                    if (y > pageHeight - minSpace) {
+                        doc.addPage();
+                        return margin;
+                    }
+                    return y;
+                }
+
+                // Header
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(fonts.header);
+                const name = document.querySelector('.home__title')?.textContent || 'Tarmizi Hairudin Ambo';
+                doc.text(name, margin, y + 8);
+
+                doc.setFontSize(fonts.subheader);
+                const role = document.querySelector('.home__subtitle')?.textContent || 'DevOps Engineer & Cloud Architect';
+                doc.text(role, margin, y + 18);
+
+                // Add horizontal line
+                doc.setDrawColor(0, 0, 0);
+                doc.setLineWidth(0.5);
+                doc.line(margin, y + 22, pageWidth - margin, y + 22);
+
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(fonts.normal);
+                const description = document.querySelector('.home__description')?.textContent || '';
+                y = addParagraph(description, y + 30);
+
+                // About Me
+                y = checkNewPage(y + 15);
+                y = addSection('About Me', y);
+                const aboutText = document.querySelector('.about__description')?.textContent || '';
+                y = addParagraph(aboutText, y + 4);
+
+                // Skills
+                y = checkNewPage(y + 15);
+                y = addSection('Key Skills', y);
+                const skills = Array.from(document.querySelectorAll('.skills__card-title')).map(skill => skill.textContent);
+
+                // Display skills in 3 columns
+                const columns = 3;
+                const skillsPerColumn = Math.ceil(skills.length / columns);
+                const columnWidth = contentWidth / columns;
+
+                y += 4;
+                skills.forEach((skill, index) => {
+                    const column = Math.floor(index / skillsPerColumn);
+                    const xPos = margin + (column * columnWidth);
+                    const yPos = y + ((index % skillsPerColumn) * spacing.between_items);
+
+                    doc.text('•', xPos, yPos);
+                    doc.text(skill, xPos + 4, yPos);
+                });
+
+                y += (skillsPerColumn * spacing.between_items) + spacing.after_section;
+
+                // Experience
+                y = checkNewPage(y + 15);
+                y = addSection('Professional Experience', y);
+                const experiences = Array.from(document.querySelectorAll('.experience__item'));
+
+                experiences.forEach((exp, index) => {
+                    y = checkNewPage(y + 8);
+                    const title = exp.querySelector('.experience__title')?.textContent?.trim() || '';
+                    const description = exp.querySelector('.experience__description')?.textContent?.trim() || '';
+
+                    // Title
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(fonts.normal);
+                    doc.text(title, margin, y);
+                    y += spacing.after_header;
+
+                    // Description
+                    doc.setFont('helvetica', 'normal');
+                    doc.setFontSize(fonts.normal);
+                    
+                    const points = description.split('\n')
+                        .map(point => point.trim())
+                        .filter(point => point);
+
+                    points.forEach(point => {
+                        y = checkNewPage(y);
+                        y = addBulletPoint(point, y, 4);
+                    });
+
+                    y += (index < experiences.length - 1) ? spacing.between_items : 0;
+                });
+
+                // Certifications
+                y = checkNewPage(y + 15);
+                y = addSection('Certifications', y);
+                const certifications = Array.from(document.querySelectorAll('.certification__card'));
+
+                y += 4;
+                certifications.forEach((cert, index) => {
+                    y = checkNewPage(y + 6);
+                    const title = cert.querySelector('.certification__title')?.textContent?.trim() || '';
+                    const issuer = cert.querySelector('.certification__issuer')?.textContent?.trim() || '';
+                    const date = cert.querySelector('.certification__date')?.textContent?.trim() || '';
+
+                    doc.setFont('helvetica', 'bold');
+                    doc.text(title, margin, y);
+                    
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(`${issuer} - ${date}`, margin + 4, y + 5);
+                    y += (index < certifications.length - 1) ? 12 : 6;
+                });
+
+                // Contact Information
+                y = checkNewPage(y + 15);
+                y = addSection('Contact Information', y);
+                const contacts = Array.from(document.querySelectorAll('.contact__card'));
+
+                y += 4;
+                contacts.forEach(contact => {
+                    const title = contact.querySelector('.contact__card-title')?.textContent?.trim() || '';
+                    const data = contact.querySelector('.contact__card-data')?.textContent?.trim() || '';
+
+                    doc.setFont('helvetica', 'bold');
+                    doc.text(`${title}:`, margin, y);
+                    
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(data, margin + 30, y);
+                    y += spacing.between_items;
+                });
+
+                // Footer with page numbers
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFont('helvetica', 'italic');
+                    doc.setFontSize(fonts.small);
+                    doc.text(`Page ${i} of ${pageCount}`, pageWidth - margin - 20, pageHeight - margin);
+                }
+
+                // Save the PDF
+                doc.save('Tarmizy_CV.pdf');
+
+            } catch (error) {
+                console.error('Error in generateCV:', error);
+                alert('An error occurred while generating the CV. Please try again.');
+            }
+        }
+    </script>
 </body>
 </html>
