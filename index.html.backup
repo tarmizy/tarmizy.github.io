@@ -18,7 +18,7 @@
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">>_Code In The Word</a>
+            <a href="#" class="nav__logo">>_Code In The Word_<</a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -154,22 +154,11 @@
                         <div class="skills__list">
                             <div class="skills__item">
                                 <div class="skills__info">
-                                    <i class="fas fa-network-wired"></i>
-                                    <span>Networking</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
                                     <i class="fab fa-aws"></i>
                                     <span>AWS</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
+                                    <div class="skills__percentage" style="width: 90%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
@@ -180,8 +169,8 @@
                                     <span>Google Cloud</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 85%">
-                                        <span>Advanced</span>
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +180,18 @@
                                     <span>Alibaba Cloud</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 85%">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>Networking</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
@@ -207,22 +207,11 @@
                         <div class="skills__list">
                             <div class="skills__item">
                                 <div class="skills__info">
-                                    <i class="fab fa-jenkins"></i>
-                                    <span>Jenkins</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
                                     <i class="fab fa-docker"></i>
                                     <span>Docker</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
+                                    <div class="skills__percentage" style="width: 90%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
@@ -230,10 +219,21 @@
                             <div class="skills__item">
                                 <div class="skills__info">
                                     <i class="fas fa-dharmachakra"></i>
-                                    <span>Kubernetes</span>
+                                    <h3>Kubernetes</h3>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fab fa-jenkins"></i>
+                                    <span>Jenkins</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
@@ -244,7 +244,7 @@
                                     <span>Git</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 85%">
+                                    <div class="skills__percentage" style="width: 90%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
@@ -264,29 +264,7 @@
                                     <span>Linux</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-terminal"></i>
-                                    <span>Shell Script</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-server"></i>
-                                    <span>System Admin</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
+                                    <div class="skills__percentage" style="width: 90%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
@@ -297,7 +275,29 @@
                                     <span>Security</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 85%">
+                                    <div class="skills__percentage" style="width: 75%">
+                                        <span>Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-terminal"></i>
+                                    <span>Shell Script</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
+                                        <span>Advanced</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skills__item">
+                                <div class="skills__info">
+                                    <i class="fas fa-server"></i>
+                                    <span>System Admin</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <div class="skills__percentage" style="width: 90%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
@@ -317,19 +317,8 @@
                                     <span>Python</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 85%">
+                                    <div class="skills__percentage" style="width: 85%">
                                         <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-database"></i>
-                                    <span>SQL</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Intermediate" style="width: 70%">
-                                        <span>Intermediate</span>
                                     </div>
                                 </div>
                             </div>
@@ -339,19 +328,19 @@
                                     <span>JavaScript</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Intermediate" style="width: 70%">
+                                    <div class="skills__percentage" style="width: 75%">
                                         <span>Intermediate</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="skills__item">
                                 <div class="skills__info">
-                                    <i class="fab fa-html5"></i>
-                                    <span>HTML/CSS</span>
+                                    <i class="fab fa-php"></i>
+                                    <span>PHP</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Intermediate" style="width: 70%">
-                                        <span>Intermediate</span>
+                                    <div class="skills__percentage" style="width: 80%">
+                                        <span>Advanced</span>
                                     </div>
                                 </div>
                             </div>
@@ -360,101 +349,45 @@
 
                     <div class="skills__card">
                         <div class="skills__card-header">
-                            <i class="fas fa-chart-line skills__card-icon"></i>
-                            <h3 class="skills__card-title">Monitoring & Observability</h3>
+                            <i class="fas fa-server skills__card-icon"></i>
+                            <h3 class="skills__card-title">Infrastructure</h3>
                         </div>
                         <div class="skills__list">
                             <div class="skills__item">
                                 <div class="skills__info">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <span>Grafana</span>
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>Load Balancing</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
+                                    <div class="skills__percentage" style="width: 90%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="skills__item">
                                 <div class="skills__info">
-                                    <i class="fas fa-tachometer-alt"></i>
-                                    <span>Prometheus</span>
+                                    <i class="fas fa-database"></i>
+                                    <span>Database Management</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
+                                    <div class="skills__percentage" style="width: 85%">
                                         <span>Advanced</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="skills__item">
                                 <div class="skills__info">
-                                    <i class="fas fa-search"></i>
-                                    <span>ELK Stack</span>
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Security</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 95%">
+                                    <div class="skills__percentage" style="width: 85%">
                                         <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-heartbeat"></i>
-                                    <span>Zabbix</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 85%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-eye"></i>
-                                    <span>Nagios</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 85%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span>Datadog</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Advanced" style="width: 85%">
-                                        <span>Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-bug"></i>
-                                    <span>New Relic</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Intermediate" style="width: 70%">
-                                        <span>Intermediate</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills__item">
-                                <div class="skills__info">
-                                    <i class="fas fa-wave-square"></i>
-                                    <span>Jaeger</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <div class="skills__percentage" data-level="Intermediate" style="width: 70%">
-                                        <span>Intermediate</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -889,8 +822,10 @@
                         <h4>Technologies Used:</h4>
                         <div class="skill-tags">
                             <span class="skill-tag">HashiCorp Vault</span>
+                            <span class="skill-tag">OWASP ZAP</span>
                             <span class="skill-tag">SonarQube</span>
-
+                            <span class="skill-tag">Trivy</span>
+                            <span class="skill-tag">OPA</span>
                         </div>
                     </div>
                 </div>
