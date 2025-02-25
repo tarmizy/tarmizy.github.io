@@ -502,6 +502,12 @@ a {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
+.nav__logo i {
+    margin-right: 0.5rem;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
 .nav__list {
     display: flex;
     column-gap: 2rem;
