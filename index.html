@@ -159,11 +159,41 @@
     }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    /* Terminal card */
-    .hero-terminal {
-      background: var(--bg-secondary); border: 1px solid var(--border);
-      border-radius: 16px; overflow: hidden; position: relative;
+    /* ===== HERO PHOTO ===== */
+    .hero-photo {
+      padding: 20px 24px 28px;
+      display: flex; justify-content: center;
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, transparent, rgba(0,240,255,0.03));
     }
+    .hero-photo img {
+      width: 130px; height: 130px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--accent-cyan);
+      box-shadow: var(--glow-cyan);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .hero-photo img:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(0,255,136,0.4); }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed; bottom: 28px; right: 28px; z-index: 99;
+      width: 46px; height: 46px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent-cyan); color: var(--bg-primary);
+      font-size: 20px; font-weight: 700; cursor: pointer;
+      border: none; box-shadow: var(--glow-cyan);
+      opacity: 0; pointer-events: none; transform: translateY(20px);
+      transition: all 0.3s;
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top:hover { transform: translateY(-4px) scale(1.08); background: var(--accent-green); }
+
+    /* ===== MICRO INTERACTIONS ===== */
+    .skill-card:hover, .project-card:hover, .cert-card:hover, .contact-link:hover {
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s, box-shadow 0.25s;
+    }
+    .btn:active { transform: scale(0.96); }
+    .stat-item:hover .stat-num { filter: brightness(1.2); }
     .hero-terminal::before {
       content: ''; position: absolute; inset: -1px;
       border-radius: 16px; padding: 1px;
@@ -426,7 +456,7 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="#" class="nav-logo"><img src="logo.png" alt="Logo" style="height:24px;vertical-align:middle;margin-right:8px;">TH</a>
+    <a href="#" class="nav-logo"><span class="bracket">&lt;</span>TH<span class="bracket">/&gt;</span></a>
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -481,6 +511,9 @@
           <div class="t-line"><span class="t-comment">  # open for opportunities</span></div>
           <div class="t-line"><span class="t-prompt">❯</span> <span style="display:inline-block;width:8px;height:16px;background:var(--accent-cyan);animation:blink 1s step-end infinite;vertical-align:middle;"></span></div>
         </div>
+        <div class="hero-photo">
+          <img src="profile.jpg" alt="Tarmizi Hairudin Ambo">
+        </div>
       </div>
     </div>
   </section>
@@ -506,13 +539,12 @@
   </div>
 
   <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="section-tag reveal">// EXPERTISE</div>
-      <h2 class="section-title reveal">Technical Skills</h2>
-      <p class="section-desc reveal">Deep expertise across cloud, security, automation, and modern development stacks.</p>
-      <!-- skills grid remains unchanged -->
-    </section>
+  <section class="section" id="skills">
+    <div class="section-tag reveal">// EXPERTISE</div>
+    <h2 class="section-title reveal">Technical Skills</h2>
+    <p class="section-desc reveal">Deep expertise across cloud, security, automation, and modern development stacks.</p>
 
+    <div class="skills-grid">
       <div class="skill-card reveal">
         <div class="skill-icon">🛡️</div>
         <h3>DevSecOps</h3>
@@ -571,13 +603,12 @@
   </section>
 
   <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="section-tag reveal">// PORTFOLIO</div>
-      <h2 class="section-title reveal">Featured Projects</h2>
-      <p class="section-desc reveal">Real‑world solutions across cloud, monitoring, digital transformation, and secure CI/CD.</p>
-      <!-- projects grid remains unchanged -->
-    </section>
+  <section class="section" id="projects">
+    <div class="section-tag reveal">// PORTFOLIO</div>
+    <h2 class="section-title reveal">Featured Projects</h2>
+    <p class="section-desc reveal">Real‑world solutions across cloud, monitoring, digital transformation, and secure CI/CD.</p>
 
+    <div class="projects-grid">
       <div class="project-card reveal">
         <div class="project-preview">📡</div>
         <div class="project-info">
@@ -766,8 +797,10 @@
 
   <footer>
     <p>© 2026 Tarmizi Hairudin Ambo</p>
-    <p>Built with ☕ and terminal commands · <a href="https://github.com/tarmizy/tarmizi-portfolio">source</a></p>
+    <p>Built with ☕ and terminal commands · <a href="https://github.com/tarmizy/tarmizy.github.io">source</a></p>
   </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <!-- JS -->
   <script>
@@ -826,6 +859,12 @@
     // ===== NAV SCROLL =====
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+      document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 500);
+    });
+
+    // ===== BACK TO TOP =====
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
